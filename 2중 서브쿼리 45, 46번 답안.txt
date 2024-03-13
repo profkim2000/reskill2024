@@ -1,0 +1,46 @@
+* 이 문제로 너무 고민하지는 않기를 바랍니다. 특이한 케이스 하나 풀어볼 시간에 일반적인 걸 더 많이 접해 봅시다.
+
+
+# 45. 피자를 좋아하는 사람들이 소유한 자동차 통계. 선호도가 높을수록 위에 보여주고, 같은 선호도이면 자동차 이름순으로 정렬
+
+select cars.name, B.carcount
+from
+(
+    select car, count(car) carcount
+    from	
+    (
+        select * 
+        from
+           address, foods
+       where 
+           address.food = foods.id
+           and foods.name = '피자'
+    ) A
+    group	by car
+) B
+, cars
+where B.car = cars.ID
+order by B.carcount desc, cars.name;
+
+
+
+#46. 햄버거를 좋아하는 사람들이 소유한 자동차 통계. 선호도가 높을수록 위에 보여주고, 같은 선호도이면 자동차 이름순으로 정렬. 만약 차이름이 audi면 아우디로 변경
+
+select replace(cars.name, 'audi', '아우디'), B.carcount
+from
+(
+    select car, count(car) carcount
+    from	
+    (
+        select * 
+        from
+           address, foods
+       where 
+           address.food = foods.id
+           and foods.name = '햄버거'
+    ) A
+    group	by car
+) B
+, cars
+where B.car = cars.ID
+order by B.carcount desc, cars.name;
