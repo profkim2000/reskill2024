@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<%
+    	String strCategory = request.getParameter("category");
+    	out.print("URL의 파라미터로 받은 값, category = " + strCategory);
+    %>
 </body>
 </html>
