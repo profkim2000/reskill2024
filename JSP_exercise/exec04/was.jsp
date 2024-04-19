@@ -13,6 +13,10 @@
 		String author = request.getParameter("author");
 		String price = request.getParameter("price");
 		String category = request.getParameter("category");    	
+		
+		// 사용자가 넘겨준 값들을 확인한다.
+		if (price.trim().length() == 0)
+			price = "0";
     %>    
     <% 	// 도서 정보를 DB에 저장한다.
  		// 접속할 DBMS 주소 		
@@ -52,21 +56,12 @@
  			query = query + "'" + category + "'";
  			query = query + ")";
  			
+ 			// 쿼리를 출력한다. 개발할 때는 항상 다양한 경우에 대해 쿼리를 출력해 보면서 확인해야 한다.
  			out.print("<br><br>query = " + query + "<br><br>");
- 			/*---------------------------------------- 
- 			여기에 쿼리문을 출력하는 코드를 추가해 보세요.
- 			----------------------------------------*/
- 		 	        
+ 			        
  			// insert 쿼리를 실행한다. 영향을 받은(=추가된) 자료의 수가 cAffected에 저장된다.
  			int cAffected = stmt.executeUpdate(query);
- 			
- 			/*----------------------------------------
- 			여기에 cAffected를 이용해 "OO개의 분류가 추가되었습니다." 라는 문구를 출력하는 코드를 추가해 보세요.
- 			----------------------------------------*/
- 			
- 			/*----------------------------------------
- 			여기에 cAffected와 strCategory를 이용해 "OO개의 분류(<넘어온 분류>)가 추가되었습니다." 라는 문구를 출력하는 코드를 추가해 보세요.
- 			----------------------------------------*/
+
  			out.print("<br><br>" + cAffected + "개의 도서가 추가되었습니다.<br>");
  			out.print("<ul>");
  			out.print("<li>name: " + name + "</li>");
