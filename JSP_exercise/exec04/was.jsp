@@ -47,7 +47,7 @@
  			stmt = con.createStatement();
 
  			// 실행할 쿼리문 			
- 			String query = "insert into book (name, publisher, author, price, category) " ;
+ 			String query = "insert into books (name, publisher, author, price, category) " ;
  			query = query + " values ";
  			query = query + "('" + name + "', ";
  			query = query + "'" + publisher + "', ";
