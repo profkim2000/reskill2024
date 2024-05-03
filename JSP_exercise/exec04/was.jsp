@@ -53,7 +53,7 @@
  			query = query + "'" + publisher + "', ";
  			query = query + "'" + author + "', ";
  			query = query + price + ", ";
- 			query = query + "'" + category + "'";
+ 			query = query + category;
  			query = query + ")";
  			
  			// 쿼리를 출력한다. 개발할 때는 항상 다양한 경우에 대해 쿼리를 출력해 보면서 확인해야 한다.
