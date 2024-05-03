@@ -1,0 +1,24 @@
+create table address
+(
+	ID int generated always as identity primary key,
+	name varchar(20) NOT NULL,
+	birthday date,
+	hphone varchar(13) NOT NULL,
+	memo varchar(100),
+	food int,
+
+	CONSTRAINT fk_address_food
+		FOREIGN KEY(food)
+		REFERENCES foods(ID)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+);
+
+
+
+
+
+
+create table address_car_br
+(
+	
