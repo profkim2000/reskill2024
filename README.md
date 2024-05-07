@@ -27,3 +27,6 @@ docker run -dit --privileged --net mynet --ip 172.30.0.6 --name tomcat -p 42888:
 ### postgresql 실행(image: ubuntu/postgres)
 
 docker run -d --net mynet --ip 172.30.0.7 --name postgres -p 43432:5432 -p 43022:22 -e POSTGRES_PASSWORD=My:s3Cr3t/ -e TZ=Asia/Seoul ubuntu/postgres:latest
+
+### tomcat 서버 새로 설치하고 geoserver 올리기 실행(image: tomcat)
+docker run -dit --privileged --net mynet --ip 172.30.0.8 --name **tomcat_geoserver** -p 44888:8080 -p 44022:22 -e TZ=Asia/Seoul tomcat:9.0
