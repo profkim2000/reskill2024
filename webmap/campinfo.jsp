@@ -53,8 +53,8 @@
         // select 쿼리를 실행한다. 검색 결과가 rs에 담긴다.
         ResultSet rs = stmt.executeQuery(query);
                     
-        // 자료가 있는 동안 루프를 돈다.
-        while(rs.next())
+        // 자료가 1개 밖에 없는 게 확실하니 while이 아닌 if를 쓴다.
+        if (rs.next())
         {
             out.print("<H2>" + rs.getString("ID") + ". " + rs.getString("facltnm") + "</H2><br>");
             out.print("<img src='" + rs.getString("firstimageurl") + "' width='500px'>");
