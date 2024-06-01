@@ -9,6 +9,16 @@
 <%
     String id = request.getParameter("id");    
 %>
+<%!
+    // null 이라는 글자 대신 NO DATA라는 글자를 보여주는 함수
+    public String checkNull(String data)
+    {
+        if (null == data)
+            return "NO DATA";
+        else
+            return data;
+    }
+%>
 <% 	// 캠핑 정보를 가져온다.
     // 접속할 DBMS 주소 		
     String url = "jdbc:postgresql://172.30.0.7/camping";
@@ -50,17 +60,17 @@
             out.print("<img src='" + rs.getString("firstimageurl") + "' width='500px'>");
             
             out.print("<H3>요약</H3>");
-            out.print(rs.getString("lineintro"));
+            out.print(checkNull(rs.getString("lineintro")));
 
             out.print("<BR><BR>");
             out.print("<H3>설명</H3>");
-            out.print(rs.getString("intro"));
+            out.print(checkNull(rs.getString("intro")));
 
             out.print("<BR><BR>");
             out.print("<H3>상세 정보</H3>");
 
             out.print("<ul>");
-            out.print("<li>운영상태 : " + rs.getString("managestatus") + "</li>");
+            out.print("<li>운영상태 : " + checkNull(rs.getString("managestatus")) + "</li>");
             out.print("<li>주소 : " + rs.getString("donm") + " " + rs.getString("sigungunm") + " " + rs.getString("addr1") + "</li>");
             out.print("<li>전화번호 : " + rs.getString("tel") + "</li>");
             out.print("<li>홈페이지 : " + "<a href='" + rs.getString("homepage") + "' target='_blank'>" + rs.getString("homepage")  + "</a></li>");
@@ -68,7 +78,7 @@
 
             out.print("<BR>");
             out.print("<H3>오시는 길</H3>");
-            out.print(rs.getString("direction"));            
+            out.print(checkNull(rs.getString("direction")));            
         } 			
         
         // 검색결과를 담은 rs를 닫는다(검색결과를 담느라 사용했던 (대량의) 메모리 반환)
@@ -86,5 +96,6 @@
         out.println("err: " + ex.toString());
     }
 %>
+
 </body>
 </html>
