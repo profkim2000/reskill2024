@@ -84,18 +84,40 @@
         // 검색결과를 담은 rs를 닫는다(검색결과를 담느라 사용했던 (대량의) 메모리 반환)
         rs.close();
         
+        
+        // 사용자 후기를 보여준다.
+
+        out.print("<BR><BR>");
+        out.print("<H3>사용자 후기</H3>");		
+        
+        // 실행할 쿼리문 	    
+        query = "select * from comment where campid = " + id ;
+                
+        // select 쿼리를 실행한다. 검색 결과가 rs에 담긴다.
+        ResultSet rs_comment = stmt.executeQuery(query);
+                    
+        // 자료가 1개 밖에 없는 게 확실하니 while이 아닌 if를 쓴다.
+        while (rs_comment.next())
+        {        
+            out.print("<BR>");
+            out.print((rs.getString("comment")));            
+        }
+    
+        rs_comment.close();
+
         // 쿼리 실행기를 닫는다.
         stmt.close();
 
         // 연결을 닫는다.
         con.close();
+
     }		
     catch(Exception ex)		// 위 try{} 에서 문제가 발생하면 이 안으로 들어온다.
     {
         // 만약 try 안의 내용을 실행하는 중에 에러가 발생하면 그 에러 내용을 보여준다.
         out.println("err: " + ex.toString());
     }
-%>
+%>	
 
 </body>
 </html>
