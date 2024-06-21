@@ -13,3 +13,10 @@
 ## 최종 보고서에 추가할 내용
 
 * DB명세서
+  * 테이블 목록(comment 포함)
+    * 테이블에 comment 붙이는 법: [방법 안내](table_comment.md)
+    * 테이블 목록 뽑는 법: [방법 안내](table_get_list.md)
+ 
+  * 각 테이블별 컬럼 목록(comment 포함)
+    *  컬럼에 comment 붙이는 법: [방법 안내](column_comment.md)
+    *  컬럼 목록 뽑는 법: [방법 안내](column_get_list.mc)
