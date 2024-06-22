@@ -6,3 +6,14 @@
 
 Properties 탭을 클릭한다.
 
+아무 컬럼이나 클릭한 다음  
+
+ctrl + A 해서 전체 선택한다. 
+
+모든 컬럼이 선택된다.
+
+![image](https://github.com/profkim2000/reskill2024/assets/162937223/1b64bcbb-d625-4a17-beac-bce991e6a426)
+
+이렇게 `copy advanced info` 한 다음 
+
+excel에 붙여넣기 한다.
