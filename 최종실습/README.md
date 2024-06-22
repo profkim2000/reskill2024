@@ -22,7 +22,7 @@
  
   * 각 테이블별 컬럼 목록(comment 포함)
     *  컬럼에 comment 붙이는 법: [방법 안내](column_comment.md)
-    *  컬럼 목록 뽑는 법: [방법 안내](column_get_list.mc)
+    *  컬럼 목록 뽑는 법: [방법 안내](column_get_list.md)
     *  양식: [다운로드](columnlist.xlsx)
 
 * 요구사항 명세서
