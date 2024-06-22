@@ -14,3 +14,10 @@ DBeaver에서 Tables 를 더블클릭한다.
 ![image](https://github.com/profkim2000/reskill2024/assets/162937223/f9269a51-810c-4f29-a69d-cef12ecdf6f5)
 
 이런 식으로 모든 테이블에 comment를 붙일 수 있다. 
+
+코멘트를 다 넣었으면  
+아래와 같이 [save] 버튼을 누르고  
+새로 나온 창에서 [Persist] 버튼을 눌러 DB에 반영한다.
+
+![image](https://github.com/profkim2000/reskill2024/assets/162937223/41167e0d-c14b-4341-b53f-f53bc142a2a2)
+
